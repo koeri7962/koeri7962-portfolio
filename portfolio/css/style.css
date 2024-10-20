@@ -61,8 +61,18 @@ img {
   text-align: center;
   letter-spacing: .05em;
   color: #333;
-  text-decoration: underline;
-  text-decoration-color: #ff914d;
+  position: relative;
+}
+
+.title :after{
+  content: "";
+  background: #ff914d;
+  width: 10%;
+  height: 3px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .lead {
