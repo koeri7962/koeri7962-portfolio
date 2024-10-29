@@ -64,7 +64,7 @@ img {
   position: relative;
 }
 
-.title :after{
+.title:after{
   content: "";
   background: #ff914d;
   width: 10%;
@@ -168,16 +168,10 @@ img {
 .mv-container img {  
   width: 100%;
   height: auto;
-  z-index: 10;
+
 }
 
-.mv2-container img{
-  position: absolute;
-  width: 25%;
-  right: 150px;
-  top: 330px;
-  z-index: 11;
-}
+
 /*--------------------------------
  Works
 ---------------------------------*/
@@ -233,9 +227,12 @@ img {
   display: inline-block;
   align-items: flex-start;
   justify-content: space-between;
-  width: 30%;
+  width: 45%;
   margin-bottom: 50px;
   text-align: center;
+}
+.skill-item3{
+  display: none;
 }
 
 .skill-img {
@@ -265,6 +262,7 @@ img {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0;
 }
 
 
@@ -324,13 +322,13 @@ img {
 ---------------------------------*/
 .footer {
   padding: 30px;
-  background-color: #333;
+  background-color: #f7f7f7;
 }
 
 .copyright {
   font-size: 10px;
   text-align: center;
-  color: #797979;
+  color: #333;
 }
 
 /*--------------------------------
@@ -409,6 +407,7 @@ img {
     display: block;
   }
 
+
   /* 見出し */
   .title {
     font-size: 26px;
@@ -457,9 +456,7 @@ img {
   }
 
   /*  メインビジュアル */
-  .mv {
-    height: 40vh;
-  }
+  
 
   .mv-container {
     padding: 0 20px;
@@ -508,7 +505,9 @@ img {
     width: 100%;
     margin-bottom: 35px;
   }
-
+  .skill-item3{
+    visibility: hidden;
+  }
   .skill-item:last-child {
     margin-bottom: 0;
   }
@@ -521,6 +520,8 @@ img {
     font-size: 13px;
     line-height: 1.7;
   }
+ 
+  
 
   /* About */
   .profile {
@@ -564,5 +565,106 @@ img {
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 20px;
+  }
+}
+
+/*追記*/
+.drawer-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .header.is-active  {
+    width: 100%;
+    top: 0;
+  }
+  .header .container {
+    display: block;
+  }
+  .header.is-active .container {
+  padding-left: 0;
+  }
+  .gnav{
+    transform: translateX(-150%);
+    transition: all 0.6s ease 0s;
+  }
+  .gnav.is-active{
+    display: block;
+    background: #f7f7f7;
+    width: 100%;
+    height:100vh;
+    transform: translateX(0);
+    position: fixed;
+    top: 0;
+
+  }
+   .gnav-list{
+    display: none;
+  }
+  .gnav.is-active .gnav-list{
+    display: block;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .gnav.is-active .gnav-item{
+    margin-top: 40px;
+  }
+  .gnav.is-active .gnav-item a{
+    display: block;
+    font-size: 16px;
+  }
+  .drawer-toggle {
+    display: block;
+    position: fixed;
+    z-index: 150;
+    transition: all 0.6s ease 0s;
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    right: 30px;
+  }
+  .drawer-toggle.is-active .drawer-toggle-icon1 {
+    transform: rotate(-45deg);
+    top: 8px;
+    background-color: #fff;
+  }
+  .drawer-toggle.is-active .drawer-toggle-icon2 {
+    display: none;
+  }
+  .drawer-toggle.is-active .drawer-toggle-icon3 {
+    transform: rotate(45deg);
+    top: 8px;
+    background-color: #fff;
+  }
+  .drawer-toggle.is-active::after {
+    display: none;
+  }
+  .drawer-toggle-icons {
+    width: 30px;
+    position: relative;
+  }
+
+  .drawer-toggle-icon1, .drawer-toggle-icon2, .drawer-toggle-icon3 {
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    background: #453a37;
+    transition: all 0.6s ease 0s;
+    border-radius: 50px;
+  }
+  .drawer-toggle-icon1 {
+    top: 0;
+  }
+  .drawer-toggle-icon2 {
+    top: 8px;
+  }
+  .drawer-toggle-icon3 {
+    top: 16px;
   }
 }
